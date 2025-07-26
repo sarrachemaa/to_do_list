@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 540px;
+}
+
+.todo-app {
+    background: white;
+    width: 100%;
+    padding: 40px 30px 70px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h1 {
+    color: #333;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h1 i {
+    margin-left: 10px;
+    color: #4b6cb7;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 15px 0;
+    font-size: 16px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(75, 108, 183, 0.4);
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ccc"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>');
+    background-size: cover;
+    background-position: center;
+    left: 10px;
+}
+
+ul li.checked {
+    color: #888;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234b6cb7"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+}
+
+ul li span {
+    color: #888;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+ul li span:hover {
+    background: #edeef0;
+    color: #e74c3c;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+@media (max-width: 500px) {
+    .row {
+        flex-direction: column;
+        background: transparent;
+        padding-left: 0;
+    }
+
+    input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 15px;
+        background: #edeef0;
+        border-radius: 30px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
